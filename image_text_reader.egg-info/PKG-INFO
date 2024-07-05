@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: image_text_reader
-Version: 0.1.0
+Version: 0.1.2
 Summary: A library to read text from images
 Home-page: https://github.com/yourusername/image_text_reader
 Author: barmin15
@@ -14,9 +14,9 @@ License-File: LICENSE
 Requires-Dist: pytesseract
 Requires-Dist: Pillow
 
-# OCR Image Text Extraction
+# Image Text Reader
 
-This project demonstrates the use of Optical Character Recognition (OCR) to extract text from images using Python. The project leverages the `pytesseract` library for OCR and the `Pillow` library for image processing.
+The `image-text-reader` library allows you to extract text from images using Optical Character Recognition (OCR) with the help of the `pytesseract` library and `Pillow` for image processing.
 
 ## Table of Contents
 
@@ -34,13 +34,13 @@ This project demonstrates the use of Optical Character Recognition (OCR) to extr
 
 ## Installation
 
-1. Install the required Python libraries:
+1. **Install the required Python libraries:**
 
     ```bash
-    pip install pytesseract Pillow
+    pip install image-text-reader
     ```
 
-2. Install Tesseract-OCR:
+2. **Install Tesseract-OCR:**
     - **Windows:** Download and install from [here](https://github.com/UB-Mannheim/tesseract/wiki).
     - **macOS:** Use Homebrew to install:
 
@@ -56,34 +56,35 @@ This project demonstrates the use of Optical Character Recognition (OCR) to extr
 
 ## Usage
 
-1. Clone the repository:
-
-    ```bash
-    git clone https://github.com/your-username/ocr-image-text-extraction.git
-    cd ocr-image-text-extraction
-    ```
-
-2. Update the path to Tesseract-OCR executable in the script:
+1. **Create a Python script** (e.g., `test_script.py`) and import the `ocr_image` function from the `image_text_reader` library:
 
     ```python
-    pytesseract.pytesseract.tesseract_cmd = r'/path/to/tesseract.exe' # Update this path for your computer
+    from image_text_reader import ocr_image
     ```
 
-3. Update the image path in the script:
+2. **Set the path to your image and Tesseract-OCR executable:**
 
     ```python
-    image_path = 'path_to_your_image.jpg' # Update this path for your image
+    # Update these paths for your system
+    image_path = 'C:/path_to_your_image.jpg'  # Replace with the path to your test image
+    tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'  # Path to Tesseract executable
+
+    extracted_text = ocr_image(image_path, tesseract_cmd=tesseract_cmd)
+    print("Extracted Text:")
+    print(extracted_text)
     ```
 
-4. Run the script:
+3. **Run your script:**
 
     ```bash
-    python ocr_script.py
+    python test_script.py
     ```
 
 ## Code Explanation
 
 - **Preprocessing Function:**
+
+    The `preprocess_image` function prepares the image for OCR by converting it to grayscale, sharpening it, and enhancing its contrast:
 
     ```python
     def preprocess_image(image_path):
@@ -94,18 +95,18 @@ This project demonstrates the use of Optical Character Recognition (OCR) to extr
         return image
     ```
 
-    This function opens the image, converts it to grayscale, sharpens it, and enhances the contrast to improve OCR accuracy.
-
 - **OCR Function:**
 
+    The `ocr_image` function processes the image and then extracts the text using `pytesseract`:
+
     ```python
-    def ocr_image(image_path):
+    def ocr_image(image_path, tesseract_cmd=None):
+        if tesseract_cmd:
+            pytesseract.pytesseract.tesseract_cmd = tesseract_cmd
         image = preprocess_image(image_path)
         text = pytesseract.image_to_string(image, lang='eng')
         return text
     ```
-
-    This function processes the image and then extracts the text using `pytesseract`.
 
 ## Contributing
 
@@ -113,5 +114,6 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 
 ## License
 
-This project is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
+For more information, visit the [image-text-reader library page on PyPI](https://pypi.org/project/image-text-reader/).
