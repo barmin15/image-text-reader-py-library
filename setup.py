@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setup(
     name="image_text_reader",
-    version="1.0.0",
+    version="1.0.1",
     author="barmin15",
     author_email="bokora@lauderalumni.hu",
     description="A library to read text from images",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/image_text_reader",
+    url="https://github.com/barmin15/image_text_reader_py_library",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
