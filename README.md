@@ -21,7 +21,7 @@ The `image-text-reader` library allows you to extract text from images using Opt
 1. **Install the required Python libraries:**
 
     ```bash
-    pip install image-text-reader
+    pip install image-text-reader==0.1.2
     ```
 
 2. **Install Tesseract-OCR:**
