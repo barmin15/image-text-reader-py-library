@@ -13,5 +13,5 @@ def ocr_image(image_path, tesseract_cmd=None):
     if tesseract_cmd:
         pytesseract.pytesseract.tesseract_cmd = tesseract_cmd
     image = preprocess_image(image_path)
-    text = pytesseract.image_to_string(image, lang='eng')
+    text = pytesseract.image_to_string(image, lang='hun')
     return text
