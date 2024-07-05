@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
 Name: image_text_reader
-Version: 1.0.0
+Version: 1.0.1
 Summary: A library to read text from images
-Home-page: https://github.com/yourusername/image_text_reader
+Home-page: https://github.com/barmin15/image_text_reader_py_library
 Author: barmin15
 Author-email: bokora@lauderalumni.hu
 Classifier: Programming Language :: Python :: 3
