@@ -1,6 +1,8 @@
 # Image Text Reader
 
-The `image-text-reader` library allows you to extract text from images using Optical Character Recognition (OCR) with the help of the `pytesseract` library and `Pillow` for image processing.
+The `image-text-reader` library allows you to extract hungarian text from images using Optical Character Recognition (OCR) with the help of the `pytesseract` library and `Pillow` for image processing.
+
+note: the current code only works if tessaract is set up for hungarian language pack
 
 ## Table of Contents
 
