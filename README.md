@@ -9,7 +9,6 @@ This project demonstrates the use of Optical Character Recognition (OCR) to extr
 - [Usage](#usage)
 - [Code Explanation](#code-explanation)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Prerequisites
 
@@ -94,7 +93,3 @@ This project demonstrates the use of Optical Character Recognition (OCR) to extr
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any changes.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
